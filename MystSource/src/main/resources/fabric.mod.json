@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "mystsource",
+	"version": "${version}",
+	"name": "Myst",
+	"description": "Java - C# Bridge",
+	"authors": [
+		"Theos"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/mystsource/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"myst.source.MystSource"
+		]
+	},
+	"mixins": [
+		"mystsource.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

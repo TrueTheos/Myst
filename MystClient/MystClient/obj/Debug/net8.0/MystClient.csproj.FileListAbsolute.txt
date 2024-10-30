@@ -1,0 +1,17 @@
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\MystClient.exe
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\MystClient.deps.json
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\MystClient.runtimeconfig.json
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\MystClient.dll
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\MystClient.pdb
+C:\Projects\Myst\MystClient\MystClient\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.csproj.AssemblyReference.cache
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.AssemblyInfoInputs.cache
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.AssemblyInfo.cs
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.csproj.CoreCompileInputs.cache
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.csproj.Up2Date
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.dll
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\refint\MystClient.dll
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.pdb
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\MystClient.genruntimeconfig.cache
+C:\Projects\Myst\MystClient\MystClient\obj\Debug\net8.0\ref\MystClient.dll
