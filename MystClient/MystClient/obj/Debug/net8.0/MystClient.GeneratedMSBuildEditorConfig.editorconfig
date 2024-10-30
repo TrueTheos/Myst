@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MystClient
-build_property.ProjectDir = C:\Projects\Myst\MystClient\MystClient\
+build_property.ProjectDir = C:\Projects\Myst\Myst\MystClient\MystClient\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

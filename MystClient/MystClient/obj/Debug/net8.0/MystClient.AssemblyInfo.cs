@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MystClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb59b70bba069c09c039d49ef131ba97d410ebc8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MystClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MystClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

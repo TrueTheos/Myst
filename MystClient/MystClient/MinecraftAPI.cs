@@ -3,6 +3,7 @@ using System.IO.MemoryMappedFiles;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using MystClient.Commands;
 using MystClient.MinecraftObjects;
 using Newtonsoft.Json;
 
@@ -20,15 +21,26 @@ namespace MystClient
             _serializer = new JsonSerializer();
         }
 
-        public async Task<T> SendCommand<T>(string commandType, params object[] arguments)
+        class ServerCommand
         {
-            var command = new Command
+            public string CommandType { get; set; }
+            public object[] Arguments { get; set; }
+        }
+
+        public async Task<Response<T>> SendCommand<T>(Command command)
+        {
+            return await SendCommandToServer<T>(command);
+        }
+
+        private async Task<Response<T>> SendCommandToServer<T>(Command command)
+        {
+            ServerCommand serverCommand = new ServerCommand()
             {
-                Type = commandType,
-                Arguments = arguments
+                CommandType = command.Type,
+                Arguments = command.Arguments
             };
 
-            string commandJson = JsonConvert.SerializeObject(command);
+            string commandJson = JsonConvert.SerializeObject(serverCommand);
 
             using (var client = new TcpClient(ServerAddress, ServerPort))
             using (var networkStream = client.GetStream())
@@ -43,9 +55,9 @@ namespace MystClient
                 string responseJson = await reader.ReadLineAsync();
                 var settings = new JsonSerializerSettings
                 {
-                    MissingMemberHandling = MissingMemberHandling.Ignore, // Ignore properties not in the class
-                    NullValueHandling = NullValueHandling.Ignore, // Ignore null values
-                    Error = (sender, args) => // Suppress errors during deserialization
+                    MissingMemberHandling = MissingMemberHandling.Ignore,
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Error = (sender, args) =>
                     {
                         args.ErrorContext.Handled = true;
                     }
@@ -53,42 +65,17 @@ namespace MystClient
 
                 try
                 {
-                    var response = JsonConvert.DeserializeObject<Response<T>>(responseJson, settings);
-                    return response.Data;
+                    return JsonConvert.DeserializeObject<Response<T>>(responseJson, settings);
                 }
                 catch (JsonSerializationException ex)
                 {
                     Console.WriteLine("Error during deserialization: " + ex.Message);
-                    return default(T); // Return default value for the type, like null or 0
+                    return new Response<T> { Success = false, Data = default(T) };
                 }
             }
         }
 
-        public async Task<BlockData[]> GetBlocksInRange(int x, int y, int z, int range)
-        {
-            return await SendCommand<BlockData[]>("GetBlocksInRange", x, y, z, range);
-        }
-
-        public async Task<BlockData> GetBlockAtPos(int x, int y, int z)
-        {
-            return await SendCommand<BlockData>("GetBlockAtPos", x, y, z);
-        }
-
-        public async Task<EntityData[]> GetEntitiesInRange(int x, int y, int z, int range)
-        {
-            return await SendCommand<EntityData[]>("GetEntitiesInRange", x, y, z, range);
-        }
-
-        public void Dispose()
-        {
-            // No need to manually dispose sockets, handled in using statements
-        }
-
-        public class Command
-        {
-            public string Type { get; set; }
-            public object[] Arguments { get; set; }
-        }
+        public void Dispose() { }
 
         public class Response<T>
         {

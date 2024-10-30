@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\Myst\\MystClient\\MystClient\\MystClient.csproj",
+      "projectUniqueName": "C:\\Projects\\Myst\\Myst\\MystClient\\MystClient\\MystClient.csproj",
       "projectName": "MystClient",
-      "projectPath": "C:\\Projects\\Myst\\MystClient\\MystClient\\MystClient.csproj",
+      "projectPath": "C:\\Projects\\Myst\\Myst\\MystClient\\MystClient\\MystClient.csproj",
       "packagesPath": "C:\\Users\\loiuy\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\Myst\\MystClient\\MystClient\\obj\\",
+      "outputPath": "C:\\Projects\\Myst\\Myst\\MystClient\\MystClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

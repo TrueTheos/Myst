@@ -13,5 +13,6 @@ namespace MystClient.MinecraftObjects
         public double Z { get; set; }
         public string Type { get; set; }
         public string UUID { get; set; }
+        public double Health { get; set; }
     }
 }

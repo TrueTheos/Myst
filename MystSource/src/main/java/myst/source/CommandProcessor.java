@@ -24,7 +24,6 @@ public class CommandProcessor {
 
     public String processCommand(Command command) {
         try {
-            // Make sure we're in a world
             if (getClient().world == null) {
                 return gson.toJson(new Response(false, "Not in a world"));
             }
